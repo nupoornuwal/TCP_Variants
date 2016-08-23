@@ -1,0 +1,34 @@
+As a part of this project, we perform the series of experiments which contrast the TCP variants (Tahoe, Reno, NewReno, SACK, VEGAS) on basis of parameters like packet drop, delay ,throughput and queuing. We show the experimental findings via graphs and infer conclusion based on our findings.
+We use NS-2 simulation to build the network topology since it has inbuilt TCP variants. 
+METHODOLOGY
+EXPERIMENT 1
+In this experiment we are trying to compare the TCP throughput in presence of CBR.
+We vary the CBR and find the throughput for all the TCP variants. By doing so we try to analyze the maximum TCP throughput that can be achieved. We performed this by varying set of CBR and TCP flows:
+1. START CBR AND TCP together.
+2. START CBR first, followed by TCP (e.g. 0.5s)
+3. Start TCP, wait for it to be steady and then start CBR
+4. START CBR first, followed by TCP, end TCP and then end CBR
+Also I can change the bandwidth of the CBR and then analyze the performance of all TCP variants and keep changing Bandwidth till you receive bottleneck condition
+We verified how the variants work under different parameters.We encountered problems while parsing the graph and data.
+EXPERIMENT 2
+In this experiment, we have two TCP streams and CBR. We can expect the two TCP flows to contend with each other for bandwidth. The TCP fairness mechanism should allow equal Bandwidth to each TCP flow. We performed this by varying CBR and two TCP flows:
+1. START TCP 1 AND TCP 2 together.
+2. START TCP1 first, followed by TCP2 (e.g 0.5s)
+3. Start TCP1, wait for it to be steady and then start TCP2
+4. START TCP2, followed by TCP1, end TCP2 and then end TCP2
+We also vary the Link Delay in various possible ways to see what effect different RTT’s have on different flows. 
+We plan to statistically analyze the various experimental findings to get answers pertaining to Fairness Mechanism of TCP by using mean and variance and even T-test.
+We verified how the variants work under different parameters.We encountered problems while parsing the graph and data. 
+Experiment 3
+In this experiment we will analyze the influence of queuing on TCP variants with the use of queuing algorithms like DropTail and Random Early DROP (RED). We have one TCP flow and one CBR/UDP flow. Using the above mentioned algorithm we would analyze the fairness and latency of the TCP variants. We try to analyze which of the two flows (CBR/TCP) is more affected by queuing.
+We wish to modify buffer size, congestion window, queue length, window size to reach our conclusion.
+We will use statistical analyze like mean, variance and T-test to find out which TCP variant is good.
+We verified how the variants work under different parameters.We encountered problems while parsing the graph and data.
+We also had difficulty in understanding RED and DropTail algorithms.
+
+To run the script you have to give the path of the NS2.
+We are parsing using python script.The graphs are being plotted using MS MIcrosoft EXCEL and pylab module.
+
+
+
+
